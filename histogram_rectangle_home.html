@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src = "jquery-1.12.4.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "histogram_rectangle_style.css">
+	<title>Home</title>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li id = "selected"><a href = "histogram_rectangle_home.html">Home</a></li>
+			<li><a href = "histogram_rectangle_method1.html">Method 1</a></li>
+			<li><a href = "histogram_rectangle_method2.html">Method 2</a></li>
+		</ul>
+	</nav>
+	<section>
+		<h1 class = "page_title">Home Page</h1>
+		<p class = "intro">
+			<p class = "intro_paragraph">
+				The challenge of finding the largest continuous rectangle in 
+				a histogram is very interesting. There are so many different ways
+				of solving a problem like this. Therefore, this site displays
+				two different ways of solving it.
+			</p>
+			<p class = "intro_paragraph">
+				The first method uses a brute force tactic by finding every
+				single continuous rectangle in the histogram and determining
+				which of these is the maximum area. Although this works, 
+				it's time complexity would be around O(n^2) which is not very
+				efficient.
+			</p>
+			<p class = "intro_paragraph">
+				Therefore, the other method, which uses a two-dimensional sort,
+				is the better approach to this problem. It's time complexity
+				is O(n) which is very efficient. Please feel free to try 
+				your problems with both methods!
+		</p>
+	</section>
+</body>

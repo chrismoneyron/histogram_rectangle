@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src = "jquery-1.12.4.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "histogram_rectangle_style.css">
+	<title>Method 1</title>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href = "histogram_rectangle_home.html">Home</a></li>
+			<li id = "selected"><a href = "histogram_rectangle_method1.html">Method 1</a></li>
+			<li><a href = "histogram_rectangle_method2.html">Method 2</a></li>
+		</ul>
+	</nav>
+	<section>
+		<h1 class = "page_title">Method 1: Brute Force</h1>
+		<p align="left">
+			<form>
+				Bin Size: <br><input id = "bin_size"></input>
+				<br>
+				Number of Bins: <br><input id = "num_bins"></input>
+				<br>
+				Data (separated by spaces): <br><input id = "data"></input>
+				<br><br>
+				<button type = "button" onclick = "output_function()">Submit</button>
+			</form>
+		</p>
+		<p id = "max_area"></p>
+	</section>
+</body>
+
+<script src = "find_min1.js"></script>
+<script src = "to_num_array.js"></script>
+<script src = "nth_index.js"></script>
+<script src = "calculate_area1.js"></script>
+<script src = "find_max_area1.js"></script>
+<script>
+function output_function() {
+	var bin_size = Number($("#bin_size").val());
+	var num_bins = Number($("#num_bins").val());
+	var data = $("#data").val();
+	var output_string;
+
+	data_array = data.split(" ");
+
+	function find_negative_num(num) {
+		return num <= 0;
+	}
+
+	if (bin_size <= 0 || num_bins <= 0 || data_array.find(find_negative_num)) {
+		alert("All values must be greater than 0");
+		return;
+	}
+
+	if (data_array.length != num_bins) {
+		alert("Number of bins must match size of data array");
+		return;
+	}
+
+	maximum_area = find_max_area1(bin_size, num_bins, data_array);
+
+	output_string = "For this data, the maximum area of a continuous rectangle is ";
+	$("#max_area").html(output_string.concat(maximum_area, "."));
+}
+</script>
+
+</html>
